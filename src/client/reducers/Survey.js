@@ -3,7 +3,7 @@ import * as SurveyActions from '../actions/Survey'
 export function SurveyListReducer(state = [], action) {
   switch (action.type) {
     case SurveyActions.GET_SURVEYS_SUCCESS: {
-      return action.survey.data;
+      return action.surveys.data;
     }
 
     default:
@@ -12,7 +12,7 @@ export function SurveyListReducer(state = [], action) {
 }
 
 const survey = (state, action) => {
-  if (state._id != (action._id || action.survey._id)) {
+  if (state.id != (action.id || action.survey.id)) {
     return state;
   }
 

@@ -2,11 +2,15 @@
   "presets": [
     ["env", {
       "targets": {
-        "browsers": ["last 2 versions"]
+        "browsers": [
+          "last 2 versions",
+          "ie >= 11",
+          "safari >= 10"
+        ]
       }
     }],
     "react",
-    "stage-3"
+    "stage-0"
   ],
   "plugins": [
     "react-hot-loader/babel"

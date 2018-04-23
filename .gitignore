@@ -60,3 +60,12 @@ Thumbs.db
 
 # Serverless directories
 .serverless
+
+# Environment variables, never commit this file
+.env
+
+# The development sqlite file
+database/development.sqlite
+
+# Adonis directory for storing tmp files
+tmp

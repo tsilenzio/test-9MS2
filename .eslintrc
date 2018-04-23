@@ -5,11 +5,11 @@
   "parserOptions": {
     "ecmaVersion": 2018
   },
-  "extends": "airbnb",
+  "extends": "airbnb-base",
   "rules": {
     "strict": "off",
-      // When given a choice I prefer no semicolons.
-      // However, I will use semicolons for this exercise. 
+    // When given a choice I prefer no semicolons.
+    // However, I will use semicolons for this exercise. 
     "semi": [
       "error",
       "always"
@@ -17,7 +17,10 @@
     // Cleaner git history
     "comma-dangle": [
       "error",
-      "always"
+      "only-multiline"
+    ],
+    "no-console": [
+      "off"
     ],
     "space-before-function-paren": [
       "error",

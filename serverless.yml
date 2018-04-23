@@ -18,25 +18,25 @@ provider:
 
 functions:
   createResponse:
-    handler: srv/aws/models/Response.create
+    handler: resources/lambda/Response.create
     events:
       - http:
           path: responses
           method: post
           cors: true
   listResponse:
-    handler: srv/aws/models/Response.list
+    handler: resources/lambda/Response.list
     events:
       - http:
           path: responses
           method: get
           cors: true
 
-  listSurvey:
-    handler: srv/aws/models/Survey.list
+  listQuestion:
+    handler: resources/lambda/Question.list
     events:
       - http:
-          path: surveys
+          path: questions
           method: get
           cors: true
 

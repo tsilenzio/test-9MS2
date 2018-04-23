@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ css('https://fonts.googleapis.com/css?family=Roboto:300,400,500') }}
+  {{ css('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css') }}
+  {{ css('https://use.fontawesome.com/releases/v5.0.10/css/all.css') }}
+  {{ css('styles/app.css') }}
+  <title>Apricity Health</title>
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-mobile is-centered">
+        
+          <a href="patient" class="button is-large">Patient Portal</a>
+          <a href="physician" class="button is-large">Physician Portal</a>
+        
+      </div>
+      <section class="section">
+        <div class="container">
+        @!section('content')
+        <div>
+      </section>
+    <div>
+  </section>
+  {{ script('https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js') }}
+  {{ script('scripts/app.js') }}
+</body>
+</html>

@@ -1,0 +1,26 @@
+@layout('themes.default')
+
+@section('content')
+  <form method="post" action="{{ route('PatientController.postIndex') }}">
+    {{ csrfField() }}
+    <div class="columns is-mobile is-centered">
+      <div class="column is-6">
+        <div class="box">
+          @each(question in questions)
+            <div class="field">
+              <label class="label" for="response_{{ question.id }}">{{ question.text }}</label>
+              <div class="control">
+                <input class="input" name="response_text[{{ question.id }}]" id="response_{{ question.id }}" type="text">
+                <input name="question_id[{{ question.id }}]" value="{{ question.id }}" type="hidden">
+                <input name="question_text[{{ question.id }}]" value="{{ question.text }}" type="hidden">
+              </div>
+            </div>
+          @endeach
+          <div class="field">
+            <input type="submit" class="button is-link" value="Submit" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+@endsection

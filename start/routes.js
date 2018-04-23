@@ -16,3 +16,8 @@
 const Route = use('Route');
 
 Route.on('/').render('welcome');
+
+Route.get('/patient', 'PatientController.getIndex');
+Route.post('/patient', 'PatientController.postIndex');
+
+Route.get('/physician', 'PhysicianController.getIndex');

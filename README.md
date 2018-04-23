@@ -9,16 +9,18 @@ A project on AWS involving the following components
 1. ~~Setup from scratch a bare-bones project~~
 2. ~~Understanding AWS Lambda~~
 3. ~~Create Node.js API backend~~
-4.  **[ Create React/Redux UI ]**
-5. Create Mobile UI
+4.  ~~Create Web UI~~
 
 ## Todo
-- Present survey to patient
-- Display chart of answers to physician
-- Display graph of answers to physician
-- Fully automate systemless through `gulp up` & `gulp down`
+- Fully automate Serverless with up and down commands
+- (Bonus) Use React & Redux
 - (Bonus) Create Mobile UI
 
 ## Setup
-- Install Gulp: `npm i -g gulp-cli`
-- Install Systemless `npm i -g systemless`
+- Change the current working directory the within this repository
+- Copy or rename `.env.sample` to `.env`
+- Install Serverless `npm i -g serverless`
+- Setup Serverless by running `serverless config credentials --provider aws --key <AWS KEY> --secret <AWS SECRET>`
+- Run Serverless by running  `serverless deploy`
+- Copy the URL provided by serverless (`https://<hash>.execute-api.us-east-1.amazonaws.com/dev`) and overwrite `API_URL` within `.env`
+- Run the server by running `adonis serve`

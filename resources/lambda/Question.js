@@ -3,6 +3,10 @@
 /**
  * @fileOverview Database model for surveys
  * @author <a href="mailto:me@tsilenz.io">Taylor Silenzio</a>
+ * 
+ * @todo Move the questions into the database
+ * @todo Refactor callback/response to make use of httpResponse
+ * @todo Implement expected or acceptable datatypes
  */
 
 module.exports = {
@@ -17,25 +21,25 @@ module.exports = {
       body: JSON.stringify(
         [{
           id: 1,
-          survey_text: "How are you feeling today?"
+          text: "How are you feeling today?"
         }, {
           id: 2,
-          survey_text: "What is your temperature?"
+          text: "What is your temperature?"
         }, {
           id: 3,
-          survey_text: "How many times did you go to the bathroom today?"
+          text: "How many times did you go to the bathroom today?"
         }, {
           id: 4,
-          survey_text: "Any changes in symptons?"
+          text: "Any changes in symptons?"
         }, {
           id: 5,
-          survey_text: "Any increase in pain?"
+          text: "Any increase in pain?"
         }, {
           id: 6,
-          survey_text: "How has your appetite been?"
+          text: "How has your appetite been?"
         }, {
           id: 7,
-          survey_text: "Are you drinking enough fluids?"
+          text: "Are you drinking enough fluids?"
         }]),
     };
     callback(null, response);

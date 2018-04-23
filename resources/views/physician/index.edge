@@ -1,0 +1,57 @@
+@layout('themes.default')
+
+@section('content')
+<script type="text/javascript">
+  var responses = {{{ toJSON(responses) }}}
+</script>
+<div class="tabs is-toggle is-fullwidth" id="tabs">
+  <ul>
+    <li class="is-active" data-tab="1">
+      <a>
+        <span class="icon is-small"><i class="fa fa-table"></i></span>
+        <span>History</span>
+      </a>
+    </li>
+    <li data-tab="2">
+      <a>
+        <span class="icon is-small"><i class="fa fa-chart-line"></i></span>
+        <span>Chart</span>
+      </a>
+    </li>
+  </ul>
+</div>
+<div id="tab-content">
+  <div class="is-active" data-content="1">
+    <table class="table is-striped is-hoverable">
+      <thead>
+        <tr>
+          <th>Question</th>
+          <th>Response</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th>Question</th>
+          <th>Response</th>
+          <th>Date</th>
+        </tr>
+      </tfoot>
+      <tbody>
+        @each(response in responses)
+        <tr>
+          <th>{{ response.question.text }}</th>
+          <td>{{ response.text }}</td>
+          <td>{{ response.timestamp }}</td>
+        </tr>
+        @endeach
+      </tbody>
+    </table>
+  </div>
+  <div data-content="2">
+    <canvas id="chart"></canvas>
+  </div>
+</div>
+{{ script('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js') }}
+{{ script('https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js') }}
+@endsection
